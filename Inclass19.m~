@@ -56,11 +56,9 @@ multcompare(stats);
 %one is the best fit in each case? In at least one of the cases, do the
 %problem with both the polyfit/polyval functions and with the 'fit' function.
 
-%for xdat and ydat
 [coeff]=polyfit(xdat,ydat,1);
 plot(xdat,ydat,'r.','MarkerSize',22); 
 hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
-%best
 
 [coeff]=polyfit(xdat,ydat,2);
 plot(xdat,ydat,'r.','MarkerSize',22);
@@ -70,23 +68,21 @@ hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
 plot(xdat,ydat,'r.','MarkerSize',22);
 hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
 
-%Miguel Angel: the lineal would be the most apporpiate, because we can see
-%that with order 2 and 3 the polynomial values are set to almost equal zero
-%in order to linearize the equations.
 
-%for xdat and ydat2
-[coeff]=polyfit(xdat,ydat2,1);
-plot(xdat,ydat2,'r.','MarkerSize',22);
-hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
-%not good
 
-[coeff]=polyfit(xdat,ydat2,2);
-plot(xdat,ydat2,'r.','MarkerSize',22);
-hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
-%better but still not good
 
-[coeff]=polyfit(xdat,ydat2,3);
-plot(xdat,ydat2,'r.','MarkerSize',22);
+
+
+[coeff,s]=polyfit(xdat,ydat2,1);
+plot(xdat,ydat2);
 hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
-%best fit to data.
+
+[coeff,s]=polyfit(xdat,ydat2,2);
+plot(xdat,ydat2);
+hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
+
+[coeff,s]=polyfit(xdat,ydat2,3);
+plot(xdat,ydat2);
+hold on; plot(xdat,polyval(coeff,xdat),'k.-','LineWidth',3);
+
 
